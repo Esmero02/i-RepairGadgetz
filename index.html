@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I-RepairGadgetz</title>
+<style>
+    body { 
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #AFDBF5;
+    }
+    nav {
+        background-color: #333;
+        overflow: hidden;
+    }
+    nav a {
+        float: left;
+        display: block;
+        color: rgb(247, 243, 243);
+        text-align: center;
+        padding: 10px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+    nav a:hover {
+        background-color: #4b68e9;
+        color: rgb(247, 243, 243);
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+    }
+    h1 { font-size: 30px; }
+    h2 { font-size: 19px; }
+    h3 { font-size: 20px; }
+    h4 { font-size: 20px; }
+    h5 { font-size: 25px; }
+    h6 { font-size: 18px; text-align: justify; }
+    .content {
+        padding: 1em;
+        text-align: justify;
+    }
+    .hidden {
+        display: none;   
+    }
+    .reviews, .card-list {
+        margin-right: 10px;
+        float: left;
+        display: flex;
+        height: 300px;
+        margin-bottom: 15px;
+        border: 2px solid #070707;
+        justify-content: center;
+    }
+    .card {
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin: auto;
+        overflow: hidden;
+    }
+    .card-item {
+        width: calc(33% - 20px);
+        margin: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .card-item img {
+        max-width: 30%;
+        height: auto;
+        
+    }
+    .service-images img {
+            width: 400px;
+            height: 300px;
+            border: 4px solid #070707;
+        }
+    .modal { 
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0; 
+        top: 0; 
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4); 
+    }
+    .modal-content { 
+        margin: 15% auto; 
+        padding: 20px; 
+        background-color: #fff; 
+        width: 80%; 
+    }
+    .close { 
+        color: #aaa; 
+        float: right; 
+        font-size: 28px; 
+        font-weight: bold; 
+    }
+    .close:hover, .close:focus { 
+        color: black; 
+        text-decoration: none; 
+        cursor: pointer; 
+    }
+    .prev, .next { 
+        cursor: pointer; 
+        position: absolute; 
+        top: 50%; 
+        width: auto; 
+        padding: 16px; 
+        margin-top: -22px; 
+        color: white; 
+        font-weight: bold; 
+        font-size: 18px; 
+        transition: 0.6s ease; 
+        border-radius: 0 3px 3px 0; 
+        user-select: none; 
+    }
+    .next { right: 0; border-radius: 3px 0 0 3px; }
+    .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="#" onclick="showContent('home')">HOME</a>
+    <a href="#" onclick="showContent('about')">ABOUT</a>
+    <a href="#" onclick="showContent('reviews')">REVIEWS</a>
+    <a href="#" onclick="showContent('services')">SERVICES</a>
+    <a href="#" onclick="showContent('contacts')">CONTACTS</a>
+</nav>
+
+<div class="content" id="home">
+    <div>
+        <img src="IRG LOGO.jpg" alt="Logo" style="display: block; max-width: 100%; height: auto;">
+    </div>
+    <h5><a href="https://maps.app.goo.gl/Xvy3E45LPS1DEcsJ6"><img src="LOCATE.png" alt="Locate" width="65" height="65"></a></h5>
+    <h5>UNIT E 2ND FLOOR. RVD COMMERCIAL BLDG.LOT 10 BLK14 COMMONWEALTH AVENUE NOVALICHES QUEZON CITY</h5>
+    <h5><a href="https://maps.app.goo.gl/Xvy3E45LPS1DEcsJ6"><img src="PIN.png" alt="Pin" width="65" height="65"></a></h5>
+    <h5>MAP PIN LOCATION</h5>
+</div>
+
+<div class="content hidden" id="about">
+    <h4><span class="label"><img src="clock.png" alt="Clock" width="50" height="50"> OPENING HOURS <img src="clock.png" alt="Clock" width="50" height="50"><br> MONDAY TO FRIDAY-10:00 AM - 7:00PM <br> SATURDAY & SUNDAY - 11:00AM-5:00PM</span></h4> 
+    <h1><u><b>TERMS AND CONDITIONS</b></u></h1>
+    <h2><b>BRINGING YOUR BROKEN ITEMS TO THE REPAIR SHOP ENSURES EXPERT ATTENTION AND QUALITY SERVICE TO GET THEM BACK IN WORKING ORDER.</b></h2> 
+    <h6>
+        <p><b>1.</b> I'm the owner/ duty Authorized representative of the owner of the product.</p>
+        <p><b>2.</b> I have permitted “i-RepairGadgetz” to perform the necessary repair.</p>
+        <p><b>3.</b> After diagnostic and quotation of my product, I have the right to choose whether I go for repair or not.</p>
+        <p><b>4.</b> I agree to pay the minimum service fee P 450-1,500 it depends on the unit even if my unit is subsequently determined as beyond repair.</p>
+        <p><b>5.</b> I-RepairGadgetz will not be responsible for saving and backing up any data present in the product instead, it should be done by me.</p>
+        <p><b>6.</b> Once diagnosis and repair has been started, i-RepairGadgetz is not liable for any data loss or file corruption, dead set, boot loop.</p>
+        <p><b>7.</b> If the person who is claiming the unit is not the signatory of the work order slip provided by i-RepairGadgetz, he/she must secure and present an authorization letter and at least 1 valid I.D of the signatory together with his/her valid I.D. and the work order slip.</p>
+        <p><b>8.</b> When taking a unit, the Indicated price or service charge must be paid before it can be given or taken by the owner.</p>
+        <p><b>9.</b> From the day that I been noticed that my product is ready to claim. I have sixty (60) day to collect my product. I understand that the product shall be forfeited in favor of and disposed by i-RepairGadgetz to cover the cost of repair and/or storage of the unit if is not claimed.</p>
+    </h6>
+</div>
+
+<div class="content hidden" id="reviews">
+    <div class="reviews"><img src="review12.jpg" alt="Review"></div>
+    <div class="reviews"><img src="review13.jpg" alt="Review1"></div>
+    <div class="reviews"><img src="review14.jpg" alt="Review2"></div>
+    <div class="reviews"><img src="review16.jpg" alt="Review3"></div>
+    <div class="reviews"><img src="review15.jpg" alt="Review4"></div>
+    <div class="reviews"><img src="review17.jpg" alt="Review5"></div>
+    <div class="reviews"><img src="review18.jpg" alt="Review6"></div>
+    <div class="reviews"><img src="review19.jpg" alt="Review7"></div>
+    <div class="reviews"><img src="review20.jpg" alt="Review8"></div>
+    <div class="reviews"><img src="review21.jpg" alt="Review9"></div>
+    <div class="reviews"><img src="review22.jpg" alt="Review10"></div>
+    <div class="reviews"><img src="review23.jpg" alt="Review11"></div>
+</div>
+<body>
+    <div class="content hidden" id="services">
+        <div class="card">
+            <div class="card-item" onclick="showService('laptop')">
+                <img src="LAPTOP.png" alt="Laptop">
+                <h4>LAPTOP</h4>
+                <div class="hidden service-images" id="laptop-images">
+                    <img src="ser laptop 1.jpg" alt="laptop1">
+                    <img src="ser laptop 2.jpg" alt="laptop2">
+                    <img src="ser laptop 3.jpg" alt="laptop3">
+                    <img src="ser laptop 4.jpg" alt="laptop4">
+                    <img src="ser laptop 5.jpg" alt="laptop5">
+                </div>
+            </div>
+            <div class="card-item" onclick="showService('cooldeep')">
+                <img src="DEEPCLEAN.png" alt="Proper Fulldeep Cleaning">
+                <h4>Proper Cooldeep Cleaning</h4>
+                <div class="hidden service-images" id="cooldeep-images">
+                    <img src="deepclean 1.jpg" alt="Cooldeep Service 1">
+                    <img src="deapclean 2.jpg" alt="Cooldeep Service 2">
+                    <img src="deapclean 3.jpg" alt="Cooldeep Service 3">
+                    <img src="deapclean 4.jpg" alt="Cooldeep Service 4">
+                    <img src="deepclean 5.jpg" alt="Cooldeep Service 5">
+                </div>
+            </div>
+            <div class="card-item" onclick="showService('board')">
+                <img src="BOARD.png" alt="Board Service">
+                <h4>BOARD</h4>
+                <div class="hidden service-images" id="board-images">
+                    <img src="board 1.jpg" alt="Board Service 1">
+                    <img src="board 2.jpg" alt="Board Service 2">
+                    <img src="board 3.jpg" alt="Board Service 3">
+                    <img src="board 4.jpg" alt="Board Service 4">
+                </div>
+            </div>
+            <div class="card-item" onclick="showService('gpu')">
+                <img src="GPU.png" alt="GPU Service">
+                <h4>GPU</h4>
+                <div class="hidden service-images" id="gpu-images">
+                    <img src="service gpu 1.jpg" alt="GPU Service 1">
+                    <img src="Service gpu 2.jpg" alt="GPU Service 2">
+                    <img src="Service gpu 3.jpg" alt="GPU Service 3">
+                    <img src="Service gpu 4.jpg" alt="GPU Service 4">
+                </div>
+            </div>
+            <div class="card-item" onclick="showService('desktop')">
+                <img src="DESKTOP.png" alt="Desktop Service">
+                <h4>DESKTOP</h4>
+                <div class="hidden service-images" id="desktop-images">
+                    <img src="service desktop 1.jpg" alt="Desktop Service 1">
+                    <img src="service desktop 2.jpg" alt="Desktop Service 2">
+                    <img src="service desktop 3.jpg" alt="Desktop Service 3">
+                    <img src="service desktop 4.jpg" alt="Desktop Service 4">
+                </div>
+            </div>
+            <div class="card-item" onclick="showService('console')">
+                <img src="GAMING CONSOLE.png" alt="Gaming Console Service">
+                <h4>GAMING CONSOLE</h4>
+                <div class="hidden service-images" id="console-images">
+                    <img src="gaming console 1.jpg" alt="Console Service 1">
+                    <img src="gaming console 2.jpg" alt="Console Service 2">
+                </div>
+            </div>
+            <div class="card-item" onclick="showService('cellphone')">
+                <img src="CELLPHONE.png" alt="Cellphone Service">
+                <h4>CELLPHONE</h4>
+                <div class="hidden service-images" id="cellphone-images">
+                    <img src="cp 1.jpg" alt="Cellphone Service 1">
+                    <img src="cp 2.jpg" alt="Cellphone Service 2">
+                </div>
+            </div>
+            <div class="card-item" onclick="showService('replace')">
+                <img src="BATTERY.png" alt="Replacement Service">
+                <h4>REPLACED KEYBOARD/ BATTERY / LCD</h4>
+                <div class="hidden service-images" id="replace-images">
+                    <img src="key 1.jpeg" alt="Replacement Service 1">
+                    <img src="key 2.jpeg" alt="Replacement Service 2">
+                    <img src="key 3.jpeg" alt="Replacement Service 3">
+                    <img src="key 4.jpeg" alt="Replacement Service 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content hidden" id="contacts">
+        <div class="image" style="text-align: center;">
+            <h1>
+                <a><b>Feel free to reach out to us at your earliest convenience to explore how we can assist you further. We offer free checkup and diagnosis.</b></a>
+            </h1>
+            <br>
+            <a><img src="TP ICON.png" alt="image" width="40" height="40"></a>
+            <b><span class="label">7007841</span></b>
+            <br>
+            <a><img src="CP ICON.png" alt="image" width="60" height="60"></a>
+            <b><span class="label">09618411751</span></b>
+            <br>
+            <a href="https://www.facebook.com/iRepairGadgetz2022">
+                <img src="Facebook.png" alt="image" width="40" height="40">
+            </a>
+            <b><span class="label">i-RepairGadgetz</span></b>
+            <br>
+            <a href="https://www.facebook.com/messages/t/102845286171558">
+                <h3>
+                    <img src="INFO.png" alt="Icon" width="40" height="30">
+                    <span class="label">Send us a message here for more info:</span>
+                </h3>
+            </a>
+            <a href="https://www.tiktok.com/@irepairgadgetz2022?_t=8kDxt3XBYet&_r=1">
+                <img src="tiktok (2).png" alt="image" width="50" height="40">
+            </a>
+            <b><span class="label">i-RepairGadgetz</span></b>
+            <br>
+            <a href="https://mail.google.com/mail/u/0/#search/irepairgadgetz2022%40gmail.com?compose=new">
+                <img src="GMAILLOGO.png" alt="image" width="40" height="30">
+            </a>
+            <b><span class="label">i-Repairgadgetz2022@gmail.com</span></b>
+        </div>
+    </div>
+
+    <script>
+        function showContent(sectionId) {
+            const sections = document.querySelectorAll('.content');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        function showService(serviceId) {
+            const serviceImages = document.getElementById(serviceId + '-images');
+            if (serviceImages) {
+                serviceImages.classList.toggle('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+</body>
+</html>
